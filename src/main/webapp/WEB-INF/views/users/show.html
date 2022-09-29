@@ -5,10 +5,19 @@
     <title>User</title>
 </head>
 <body>
-<p th:text="${user.getName()}">VALUE</p>
-<p th:text="${user.getId()}">VALUE</p>
-<p th:text="${user.getAge()}">VALUE</p>
-
+<h1> User Information </h1>
+<table border="1">
+    <tbody>
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Id</th>
+    </tr>
+        <td th:text="${user.getName()}">Name</td>
+        <td th:text="${user.getId()}">Id</td>
+        <td th:text="${user.getAge()}">Age</td>
+    </tbody>
+</table>
 <a th:href="@{/users/{id}/edit(id=${user.getId()})}">Edit</a>
 
 <form th:method="DELETE" th:action="@{/users/{id}(id=${user.getId()})}">

@@ -5,16 +5,19 @@
     <title>Users</title>
 </head>
 <body>
-
-<div th:each="user : ${users}"> <!-- Структура Foreach В представлении HTml  -->
-    <!--Вывод на странице людей с активной ссылкой нажатие по которой предсталяет нам данные о них-->
-    <a th:href="@{/users/{id}(id=${user.getId()})}" th:text="${user.getName()}">user</a>
-
-
-</div>
+<h1> Users all </h1>
+<table border ="1">
+    <tbody>
+    <tr>
+        <th>name</th>
+    </tr>
+<tr th:each="user : ${users}">
+    <td><a th:href="@{/users/{id}(id=${user.getId()})}" th:text="${user.getName()}">name</a></td>
+</tr>
+    </tbody>
+</table>
 <br/>
 <hr/>
-
 <a href="/users/new">Create new user</a>
 
 </body>

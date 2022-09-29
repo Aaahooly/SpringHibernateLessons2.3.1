@@ -14,8 +14,6 @@ public interface UserDao  {
     public User show(int idUser);
 
     public void saveUser(User user);
-//
-//    public void deleteUser(int idUser);
 
     void deleteUser(int idUser);
 
